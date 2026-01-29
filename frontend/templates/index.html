@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Research Assistant</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/scientific-theme.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1 class="logo">🔬 Deep Research Assistant</h1>
+            <p class="tagline">Transform topics into structured IEEE research reports with AI-powered synthesis</p>
+        </header>
+        
+        <!-- Main Form -->
+        <div class="glass-card">
+            <form id="research-form">
+                <!-- Topic Input -->
+                <div class="form-group">
+                    <label for="topic">Research Topic</label>
+                    <textarea 
+                        id="topic" 
+                        name="topic" 
+                        placeholder="Enter your research topic (e.g., 'Quantum Computing Applications in Cryptography')"
+                        required
+                    ></textarea>
+                </div>
+                
+                <!-- Output Format Selection -->
+                <div class="form-group">
+                    <label>Output Format</label>
+                    <div class="format-options">
+                        <div class="format-option">
+                            <input type="radio" id="format-screen" name="format" value="screen" checked>
+                            <label for="format-screen">📱 On Screen</label>
+                        </div>
+                        <div class="format-option">
+                            <input type="radio" id="format-pdf" name="format" value="pdf">
+                            <label for="format-pdf">📄 PDF</label>
+                        </div>
+                        <div class="format-option">
+                            <input type="radio" id="format-docx" name="format" value="docx">
+                            <label for="format-docx">📝 DOCX</label>
+                        </div>
+                        <div class="format-option">
+                            <input type="radio" id="format-both" name="format" value="both">
+                            <label for="format-both">📦 Both Files</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Research Depth -->
+                <div class="form-group">
+                    <label for="depth">Research Depth</label>
+                    <select id="depth" name="depth">
+                        <option value="quick">Quick (3 queries, ~1 min)</option>
+                        <option value="standard" selected>Standard (5 queries, ~2 min)</option>
+                        <option value="deep">Deep (8 queries, ~3 min)</option>
+                    </select>
+                </div>
+                
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-primary" id="submit-btn">
+                    Start Research
+                </button>
+            </form>
+        </div>
+        
+        <!-- Progress Section -->
+        <div id="progress-section" class="progress-section glass-card">
+            <h2 style="margin-bottom: 1rem; color: var(--primary-color);">Research in Progress</h2>
+            <div class="progress-bar-container">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+            <p id="progress-message" class="progress-message">Initializing...</p>
+        </div>
+        
+        <!-- Results Section -->
+        <div id="results-section" class="results-section glass-card">
+            <h2 style="margin-bottom: 1rem; color: var(--success-color);">✓ Research Complete</h2>
+            
+            <div id="result-content" class="result-content">
+                <!-- Results will be inserted here -->
+            </div>
+            
+            <div class="download-buttons">
+                <button id="download-pdf" class="btn btn-download" style="display: none;">
+                    📄 Download PDF
+                </button>
+                <button id="download-docx" class="btn btn-download" style="display: none;">
+                    📝 Download DOCX
+                </button>
+                <button class="btn btn-download" onclick="location.reload()">
+                    🔄 New Research
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='js/research-app.js') }}"></script>
+</body>
+</html>

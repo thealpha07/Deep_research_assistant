@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+
+# Environment
+.env
+.env.local
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Data
+data/
+*.db
+*.sqlite
+
+# Outputs
+outputs/
+temp/
+*.pdf
+*.docx
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# ChromaDB
+chromadb/
+*.parquet
