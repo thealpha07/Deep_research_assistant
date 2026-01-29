@@ -29,7 +29,7 @@ A comprehensive research assistant that transforms user topics into structured I
 
 1. **Clone or navigate to the project directory**
    ```bash
-   cd X:\MSRIT\Py_project\deep-research-assistant
+   cd X:\deep-research-assistant
    ```
 
 2. **Create virtual environment**
